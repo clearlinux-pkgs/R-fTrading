@@ -4,15 +4,12 @@
 #
 Name     : R-fTrading
 Version  : 3042.79
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/fTrading_3042.79.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fTrading_3042.79.tar.gz
 Summary  : Rmetrics - Trading and Rebalancing Financial Instruments
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-fBasics
-Requires: R-timeDate
-Requires: R-timeSeries
 BuildRequires : R-fBasics
 BuildRequires : R-timeDate
 BuildRequires : R-timeSeries
@@ -30,11 +27,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535988692
+export SOURCE_DATE_EPOCH=1552898307
 
 %install
+export SOURCE_DATE_EPOCH=1552898307
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1535988692
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,8 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library fTrading|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  fTrading || :
 
 
 %files
@@ -95,10 +91,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/fTrading/help/paths.rds
 /usr/lib64/R/library/fTrading/html/00Index.html
 /usr/lib64/R/library/fTrading/html/R.css
+/usr/lib64/R/library/fTrading/tests/doRUnit.R
 /usr/lib64/R/library/fTrading/unitTests/Makefile
-/usr/lib64/R/library/fTrading/unitTests/report.html
-/usr/lib64/R/library/fTrading/unitTests/report.txt
-/usr/lib64/R/library/fTrading/unitTests/reportSummary.txt
 /usr/lib64/R/library/fTrading/unitTests/runTests.R
 /usr/lib64/R/library/fTrading/unitTests/runit.BenchmarkAnalysis.R
 /usr/lib64/R/library/fTrading/unitTests/runit.RollingAnalysis.R
