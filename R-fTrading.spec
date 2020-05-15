@@ -4,7 +4,7 @@
 #
 Name     : R-fTrading
 Version  : 3042.79
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/fTrading_3042.79.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fTrading_3042.79.tar.gz
 Summary  : Rmetrics - Trading and Rebalancing Financial Instruments
@@ -17,7 +17,6 @@ BuildRequires : R-fBasics
 BuildRequires : R-timeDate
 BuildRequires : R-timeSeries
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 instruments. It implements various technical indicators to analyse time series such
@@ -25,21 +24,22 @@ instruments. It implements various technical indicators to analyse time series s
 
 %prep
 %setup -q -c -n fTrading
+cd %{_builddir}/fTrading
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571834288
+export SOURCE_DATE_EPOCH=1589584950
 
 %install
-export SOURCE_DATE_EPOCH=1571834288
+export SOURCE_DATE_EPOCH=1589584950
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
