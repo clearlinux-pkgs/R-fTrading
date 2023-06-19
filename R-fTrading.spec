@@ -4,7 +4,7 @@
 #
 Name     : R-fTrading
 Version  : 3042.79
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/fTrading_3042.79.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fTrading_3042.79.tar.gz
 Summary  : Rmetrics - Trading and Rebalancing Financial Instruments
